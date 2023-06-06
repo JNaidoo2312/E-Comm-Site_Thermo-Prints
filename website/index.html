@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script defer src="js/index.js"></script>
+  </head>
+  <body>
+    <div>
+      <div
+        class="modal fade"
+        id="cartModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-lg modal-dialog-centered"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Your Shopping Cart
+              </h5>
+            </div>
+            <div class="modal-body">
+              <table class="table table-image">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody id="table_entry">
+                  <tr class="table_entry_example" id="table_entry_example">
+                    <td class="w-25">
+                      <img
+                        src=""
+                        class="table_product_image img-fluid img-thumbnail"
+                        alt="Sheep"
+                      />
+                    </td>
+                    <td><span class="table_product_name"></span></td>
+                    <td><span class="table_product_count"></span></td>
+                    <td><span class="table_product_price"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-end">
+                <h5>
+                  Total: R<span
+                    id="cart_value"
+                    class="price text-success"
+                  ></span>
+                </h5>
+              </div>
+            </div>
+            <div
+              class="modal-footer border-top-0 d-flex justify-content-between"
+            >
+              <button
+                id="close_cart"
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button id="clear_cart" type="button" class="btn btn-success">
+                <!-- There is meant to be an API for posting to db this api would
+                   include the item name and count which then queries on the db and
+                    stores the item_id + item_count + user_id who ordered item. 
+                  This was not included as we never built a user authentication platform 
+                  and neither can we use a framework for SQL which would help prevent sql
+                   injection
+                  -->
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="nav-con">
+        <img src="images/tp.png" alt="" />
+
+        <div id="open_cart" class="shopping-cart">
+          <img class="img-cart" src="images/shopping-cart (1).png" alt="" />
+          <span id="cart_count" class="cart_count"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="item_list_container">
+      <div id="item_store_list" class="item_store_list">
+        <div id="main_card" class="item-preview-card">
+          <div class="item-image">
+            <img src="" alt="" />
+            <div class="middle">
+              <img src="" alt="" />
+            </div>
+          </div>
+
+          <div class="item-info">
+            <h3 class="product_name"></h3>
+            <p class="item_description"></p>
+            <div>
+              <p class="">R <span class="product_price"></span></p>
+              <span class="star_holder">
+                <img class="star_rating" alt="" />
+              </span>
+            </div>
+          </div>
+          <div class="cart_block">
+            <button class="cart_button">
+              <i class="fas fa-cart-arrow-down"></i> Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
